@@ -1,0 +1,25 @@
+{
+  "name": "",
+
+  "lastName": "",
+
+  "age": 0,
+
+  "idType": "",
+
+  "idNumber": "",
+
+  "gender": "",
+
+  "weight": 0,
+
+  "height": 0,
+
+  "cityOfBirth": "",
+
+  "cityOfResidence": "",
+
+  "sports": "",
+
+  "nutritionType": ""
+}

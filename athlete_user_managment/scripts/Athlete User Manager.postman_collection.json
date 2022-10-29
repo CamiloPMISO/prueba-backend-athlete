@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "d839da2d-9214-4521-b0e1-f4c2a41398f3",
+		"name": "Athlete User Manager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20335469"
+	},
+	"item": [
+		{
+			"name": "Create Athlete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/athlete",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"athlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = pm.response.json()",
+							"pm.globals.set(\"user_token\", data.token);",
+							"pm.test(\"Status code is 201\", function () {",
+							"   pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"{{email}}\",\n    \"password\": \"{{password}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/athlete/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"athlete",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user data",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Anival\",\n  \"lastName\": \"Florez\",\n  \"age\": 35,\n  \"idType\": \"cc\",\n  \"idNumber\": \"123456789\",\n  \"gender\": \"male\",\n  \"weight\": 97,\n  \"height\": 1.79,\n  \"cityOfBirth\": \"ddd7c109-f46d-464b-9b60-f20bee9f07f4\",\n  \"cityOfResidence\": \"531da3ae-63a8-4b8a-bb12-a63baaa59b2f\",\n  \"sports\": [\"2ceafa81-c69a-4e89-878a-8306d2efd256\", \"61e5bad4-137a-4ebd-a5bb-1d7d12bc5364\"],\n  \"nutritionType\": \"normal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/athlete",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"athlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Data By Token",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/athlete",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"athlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set profiles",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"demographicProfile\": \"c893baa3-cf56-483b-a390-6149f48818f7\",\n    \"foodProfile\": \"1f6548f1-6d53-4412-8739-bc9302d542dd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/athlete/set_profiles",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"athlete",
+						"set_profiles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set Plan",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"plan\": \"premium\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/athlete/set_plan",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"athlete",
+						"set_plan"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "localhost:3000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "email",
+			"value": "sample1@gmail.com",
+			"type": "string"
+		},
+		{
+			"key": "password",
+			"value": "123456",
+			"type": "string"
+		}
+	]
+}
