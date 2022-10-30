@@ -35,9 +35,9 @@ phases:
 artifacts:
   files:
     - '**/*'
-    - imagedefinitions.json
-    - imageDetail.json
+    - $MICROSERVICE_NAME/imagedefinitions.json
+    - $MICROSERVICE_NAME/imageDetail.json
   secondary-artifacts:
     ImageArtifact:
       files:
-        - imageDetail.json
+        - $MICROSERVICE_NAME/imageDetail.json
