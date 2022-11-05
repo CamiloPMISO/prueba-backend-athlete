@@ -22,7 +22,7 @@ import { RiskEntity } from './risk/risk.entity';
     CountryModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: process.env.POSTRES_HOST ||'localhost',
       port: 5432,
       username: 'postgres',
       password: 'postgres',

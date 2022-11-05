@@ -29,7 +29,7 @@ insert into activity_entity (id, name, type, description, image, duration, start
 insert into activity_entity (id, name, type, description, image, duration, start_at, sport, "placeId") values ('5c8a7211-d7fe-4e21-9649-c94adf437cf7', 'La ruta peligrosa', 'training', 'Aumenta y reduce la marcha frecuentemente', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pexels.com%2Fes-es%2Fbuscar%2Fciclismo%2F&psig=AOvVaw1lTfHrf0exvnFssaMPPFm0&ust=1666647460392000&source=images&cd=vfe&ved=0CAkQjRxqFwoTCMiSkOCn9_oCFQAAAAAdAAAAABAE', 5400, '08:00', 'e6089868-0a23-40fd-9e4d-93c7cae07745', '321763af-6d18-4c93-b084-16e92a0aaba4');
 
 /*template sport cicling*/
-insert into template_training_plant_entity (id, sports, "profileDescription", city) values ('ff5a05f9-7200-4fbf-a8df-3d909d3fd518', '2ceafa81-c69a-4e89-878a-8306d2efd256', 'Ejercicios para los ciclistas', 'ddd7c109-f46d-464b-9b60-f20bee9f07f4');
+insert into template_training_plan_entity (id, sports, "profileDescription", city) values ('ff5a05f9-7200-4fbf-a8df-3d909d3fd518', '2ceafa81-c69a-4e89-878a-8306d2efd256', 'Ejercicios para los ciclistas', 'ddd7c109-f46d-464b-9b60-f20bee9f07f4');
 
 insert into template_trainig_day_entity (id, day, "templateTrainingPlantId") values ('f47a5a89-e049-4a04-955c-f2ea623872ba', 1, 'ff5a05f9-7200-4fbf-a8df-3d909d3fd518');
 insert into template_trainig_day_entity (id, day, "templateTrainingPlantId") values ('043dd030-2ead-4b89-90e8-5a58f14dbbf8', 2, 'ff5a05f9-7200-4fbf-a8df-3d909d3fd518');
@@ -48,7 +48,7 @@ insert into template_trainig_day_entity_activities_activity_entity ("templateTra
 insert into template_trainig_day_entity_activities_activity_entity ("templateTrainigDayEntityId", "activityEntityId") values ('26762956-1e44-4b4f-9488-354e62fc01ee', 'ba75e576-3d4f-43c3-832d-c5786643f602');
 
 /*template sport any*/
-insert into template_training_plant_entity (id, sports, "profileDescription", city) values ('e7f29b8e-2abf-4318-9461-5b4b81018478', 'e6089868-0a23-40fd-9e4d-93c7cae07745', 'Para cualquier deportista', 'ddd7c109-f46d-464b-9b60-f20bee9f07f4');
+insert into template_training_plan_entity (id, sports, "profileDescription", city) values ('e7f29b8e-2abf-4318-9461-5b4b81018478', 'e6089868-0a23-40fd-9e4d-93c7cae07745', 'Para cualquier deportista', 'ddd7c109-f46d-464b-9b60-f20bee9f07f4');
 
 insert into template_trainig_day_entity (id, day, "templateTrainingPlantId") values ('1b79b21d-66ec-4b0d-8c86-e015bf937b6a', 1, 'e7f29b8e-2abf-4318-9461-5b4b81018478');
 insert into template_trainig_day_entity (id, day, "templateTrainingPlantId") values ('c371e422-a2e7-4e46-8573-a4a0e1b5d19d', 2, 'e7f29b8e-2abf-4318-9461-5b4b81018478');
@@ -67,7 +67,7 @@ insert into template_trainig_day_entity_activities_activity_entity ("templateTra
 insert into template_trainig_day_entity_activities_activity_entity ("templateTrainigDayEntityId", "activityEntityId") values ('bd6cc55f-0135-4f8b-84bd-58bdf886a2e0', '5c8a7211-d7fe-4e21-9649-c94adf437cf7');
 
 /*template sport indor_training*/
-insert into template_training_plant_entity (id, sports, "profileDescription", city) values ('c256ba6d-8350-422f-bc64-ec641dfa31f1', '61e5bad4-137a-4ebd-a5bb-1d7d12bc5364', 'Ejercicios Indor', 'ddd7c109-f46d-464b-9b60-f20bee9f07f4');
+insert into template_training_plan_entity (id, sports, "profileDescription", city) values ('c256ba6d-8350-422f-bc64-ec641dfa31f1', '61e5bad4-137a-4ebd-a5bb-1d7d12bc5364', 'Ejercicios Indor', 'ddd7c109-f46d-464b-9b60-f20bee9f07f4');
 
 insert into template_trainig_day_entity (id, day, "templateTrainingPlantId") values ('a633be39-e540-4f96-8e57-d12d171b6589', 1,'c256ba6d-8350-422f-bc64-ec641dfa31f1');
 insert into template_trainig_day_entity (id, day, "templateTrainingPlantId") values ('9bfd00a0-711a-40f4-9c17-e181707d6ca9', 2,'c256ba6d-8350-422f-bc64-ec641dfa31f1');
@@ -86,7 +86,7 @@ insert into template_trainig_day_entity_activities_activity_entity ("templateTra
 insert into template_trainig_day_entity_activities_activity_entity ("templateTrainigDayEntityId", "activityEntityId") values ('c5990f04-3826-4ddf-aafe-0a51c7c60f16','1f7c45ef-af11-4063-b05c-1db6d598cd7c');
 
 /*template sport cicling y indor_training*/
-insert into template_training_plant_entity (id, sports, "profileDescription", city) values ('34202f08-49cf-4093-923d-9ae4c016c234', '2ceafa81-c69a-4e89-878a-8306d2efd256|61e5bad4-137a-4ebd-a5bb-1d7d12bc5364', 'Ejercicios Mixtos de ciclismo y indor training', 'ddd7c109-f46d-464b-9b60-f20bee9f07f4');
+insert into template_training_plan_entity (id, sports, "profileDescription", city) values ('34202f08-49cf-4093-923d-9ae4c016c234', '2ceafa81-c69a-4e89-878a-8306d2efd256|61e5bad4-137a-4ebd-a5bb-1d7d12bc5364', 'Ejercicios Mixtos de ciclismo y indor training', 'ddd7c109-f46d-464b-9b60-f20bee9f07f4');
 
 insert into template_trainig_day_entity (id, day, "templateTrainingPlantId") values ('a6fc3e77-9401-4387-b768-90692af0ab81', 1,'34202f08-49cf-4093-923d-9ae4c016c234');
 insert into template_trainig_day_entity (id, day, "templateTrainingPlantId") values ('52475efc-063b-48c1-8c90-a4d6075c7709', 2,'34202f08-49cf-4093-923d-9ae4c016c234');

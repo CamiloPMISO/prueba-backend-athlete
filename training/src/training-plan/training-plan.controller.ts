@@ -1,9 +1,11 @@
-import { Controller, UseGuards, Headers, Get, Post } from '@nestjs/common';
-import { AthleteService } from 'src/athlete/athlete.service';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
+import { Controller, UseGuards, Headers, Get, Post, UseInterceptors } from '@nestjs/common';
+import { AthleteService } from '../athlete/athlete.service';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
+import { BusinessErrorsInterceptor } from '../shared/interceptors/business-errors.interceptor';
 import { TrainingPlanService } from './training-plan.service';
 
 @Controller('training-plan')
+@UseInterceptors(BusinessErrorsInterceptor)
 export class TrainingPlanController {
 
     constructor(

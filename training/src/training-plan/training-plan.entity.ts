@@ -1,4 +1,4 @@
-import { TrainingDayEntity } from 'src/training-day/training-day.entity';
+import { TrainingDayEntity } from '../training-day/training-day.entity';
 import { Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 

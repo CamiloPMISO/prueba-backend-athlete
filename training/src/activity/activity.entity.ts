@@ -1,6 +1,7 @@
 import { PlaceEntity } from '../place/place.entity';
-import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn } from 'typeorm';
 import { TemplateTrainigDayEntity } from '../template-training-day/template-trainig-day.entity'
+import { TrainingAdditionalDataEntity } from '../training-additional-data/training-additional-data.entity';
 
 enum ActivityType {
   TRAINING = 'training',
@@ -38,4 +39,7 @@ export class ActivityEntity {
 
   @ManyToMany(() => TemplateTrainigDayEntity, (template) => template.activities)
   trainingDays: TemplateTrainigDayEntity[];
+
+  @OneToOne(() => TrainingAdditionalDataEntity, (template) => template.activity)
+  trainingAdditionalData: TrainingAdditionalDataEntity;
 }
