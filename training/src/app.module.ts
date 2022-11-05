@@ -21,6 +21,8 @@ import { TrainingDayEntity } from './training-day/training-day.entity';
 import { TrainingPlanEntity } from './training-plan/training-plan.entity';
 import { RiskModule } from './risk/risk.module';
 import { AuthModule } from './auth/auth.module';
+import { TrainingAdditionalDataModule } from './training-additional-data/training-additional-data.module';
+import { TrainingAdditionalDataEntity } from './training-additional-data/training-additional-data.entity';
 
 
 @Module({
@@ -36,7 +38,7 @@ import { AuthModule } from './auth/auth.module';
     TemplateTrainingDayModule,
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: process.env.POSTRES_HOST ||'localhost',
       port: 5432,
       username: 'postgres',
       password: 'postgres',
@@ -48,6 +50,7 @@ import { AuthModule } from './auth/auth.module';
         TemplateTrainingPlanEntity,
         TrainingDayEntity,
         TrainingPlanEntity,
+        TrainingAdditionalDataEntity
       ],
       dropSchema: true,
       synchronize: true,
@@ -56,6 +59,7 @@ import { AuthModule } from './auth/auth.module';
     TrainingDayModule,
     TrainingPlanModule,
     RiskModule,
+    TrainingAdditionalDataModule,
   ],
   controllers: [AppController],
   providers: [AppService, JwtService],

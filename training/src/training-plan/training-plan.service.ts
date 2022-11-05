@@ -59,8 +59,8 @@ export class TrainingPlanService {
                 today.setDate(today.getDate() + trainingDayComplete.day - 1)
 
                 const formatMap = {
-                    mm: today.getMonth() + 1,
-                    dd: today.getDate(),
+                    mm: this.add_leading_zero(today.getMonth() + 1),
+                    dd: this.add_leading_zero(today.getDate()),
                     yyyy: today.getFullYear()
                 };
 
@@ -86,6 +86,10 @@ export class TrainingPlanService {
         trainingPlan.trainingDays =  trainingDays;
 
         return trainingPlan;
+    }
+
+    add_leading_zero(value : number){
+        return value < 10 ? '0' + value : '' + value
     }
 
 }
