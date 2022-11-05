@@ -13,11 +13,16 @@ RUN npm install
 # Bundle app source
 COPY . .
 
+ARG POSTRES_HOST_ARG
+ENV POSTRES_HOST=$POSTRES_HOST_ARG
+
+ARG PROD_URL_ARG
+ENV PROD_URL=$PROD_URL_ARG
+
 # Creates a "dist" folder with the production build
-RUN npm run build
+RUN npm run build:prod
 
 EXPOSE 3000
-
 
 # Start the server using the production build
 CMD [ "node", "dist/main.js" ]
