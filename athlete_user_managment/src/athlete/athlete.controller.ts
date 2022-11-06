@@ -55,14 +55,12 @@ export class AthleteController {
         sports.forEach(async (sport)=> {
             sportsList.push(await this.sportService.findOne(sport));
         })
-
         const athleteNewData: AthleteEntity = plainToInstance(AthleteEntity, newData);
         athleteNewData.completed = true;
         athleteNewData.cityOfBirth = cityBirth
         athleteNewData.cityOfResidence = cityResidence;
         athleteNewData.sports = sportsList;
-
-        const imc = athleteNewData.weight / (athleteNewData.height * athleteNewData.height);
+        const imc = athleteNewData.weight / ((athleteNewData.height * athleteNewData.height)/10000);
         
         let athleteRisks: RiskEntity[] = []
         const allRisks = await this.riskService.findAll()

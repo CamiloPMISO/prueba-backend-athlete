@@ -56,6 +56,9 @@ export class AthleteEntity {
   @Column({ nullable: true })
   gender: Gender;
 
+  @Column({ nullable: true })
+  age: number;
+
   @Column('numeric', { precision: 7, scale: 2, default: -1 })
   weight: number;
 
