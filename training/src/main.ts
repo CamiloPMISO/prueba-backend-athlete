@@ -9,6 +9,6 @@ async function bootstrap() {
     prefix: 'sv-training/api/v',
     defaultVersion: '1',
   });
-  await app.listen(3002);
+  await app.listen(process.env.PORT || 3002);
 }
 bootstrap();

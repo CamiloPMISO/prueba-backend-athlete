@@ -19,6 +19,8 @@ ENV POSTRES_HOST=$POSTRES_HOST_ARG
 ARG PROD_URL_ARG
 ENV PROD_URL=$PROD_URL_ARG
 
+ENV PORT=3000
+
 # Creates a "dist" folder with the production build
 RUN npm run build:prod
 
