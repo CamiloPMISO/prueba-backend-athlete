@@ -18,7 +18,6 @@ export class TrainingPlanController {
       async createTrainingPlan(@Headers() headers: Record<string, string>) {
         console.log("entro crear plan")  
         console.log(headers.authorization)
-        
 
         try {
             const athlete = await this.athleteService.getAthleteByToken(
