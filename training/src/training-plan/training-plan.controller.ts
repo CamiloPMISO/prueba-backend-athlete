@@ -16,9 +16,13 @@ export class TrainingPlanController {
       @UseGuards(JwtAuthGuard)
       @Post()
       async createTrainingPlan(@Headers() headers: Record<string, string>) {
+        console.log("entro crear plan")  
+        console.log(headers.authorization)
         const athlete = await this.athleteService.getAthleteByToken(
           headers.authorization,
         );
+        console.log("athleta")
+        console.log(athlete)
 
         let trainingPlan = await this.trainingPlanService.create(athlete);
 
