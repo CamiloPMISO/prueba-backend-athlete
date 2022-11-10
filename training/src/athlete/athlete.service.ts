@@ -13,7 +13,6 @@ export class AthleteService {
       'Content-Type': 'application/json',
       Authorization: token,
     };
-    console.log(athleteUserManagmentServiceURL)
     return await lastValueFrom(
       this.httpService
         .get(athleteUserManagmentServiceURL + '/athlete', { headers })

@@ -3,7 +3,7 @@ import { Column, Entity, ManyToMany, ManyToOne, OneToOne, PrimaryGeneratedColumn
 import { TemplateTrainigDayEntity } from '../template-training-day/template-trainig-day.entity'
 import { TrainingAdditionalDataEntity } from '../training-additional-data/training-additional-data.entity';
 
-enum ActivityType {
+export enum ActivityType {
   TRAINING = 'training',
   EVENT = 'event',
 }

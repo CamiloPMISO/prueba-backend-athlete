@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Query, UseGuards } from '@nestjs/common';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { TrainingAdditionalDataEntity } from '../training-additional-data/training-additional-data.entity';
 import { TrainingAdditionalDataService } from '../training-additional-data/training-additional-data.service';
@@ -38,4 +38,5 @@ export class ActivityController {
         await this.trainingDataService.update(trainingData.id, trainingData)
         return await this.activityService.findOne(activityId);
     }
+
 }
